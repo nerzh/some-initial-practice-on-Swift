@@ -110,7 +110,8 @@ func prime(count: Int) -> [Int] {
 /// Prime number end
 
 
-// MARK: Pi
+// Pi row Niklanta
+
 func summandPi(_ number: Double) -> Double {
     return 4 / (number * (number+1) * (number+2))
 }
@@ -139,8 +140,8 @@ func pi(precision: Int = 2) -> Double {
     }
     return x + comparableNum
 }
-//print(pi(precision: 2))
-// Pi end
+//print(pi(precision: 5))
+// Pi row Niklanta end
 
 
 // MARK: Factorial
@@ -156,3 +157,20 @@ func fact(_ num: Int) -> Int {
 }
 print(fact(20))
 // Factorial end
+
+
+// MARK: E
+func misterE(_ precision: Int) -> Double{
+    var tempSumm      : Double = 2
+    var comparableNum : Double = 0
+    var count     = 1
+    
+    while (digit(tempSumm, precision) != comparableNum) {
+        comparableNum  = digit(tempSumm, precision)
+        count         += 1
+        tempSumm      += 1/Double(fact(count))
+    }
+    return comparableNum
+}
+//print(misterE(2))
+// e end
